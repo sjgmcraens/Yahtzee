@@ -1,0 +1,247 @@
+﻿<Application x:Class="Yahtzee.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Yahtzee"
+             StartupUri="MainWindow.xaml">
+    
+    
+    
+    <Application.Resources>
+        
+        
+        
+
+        <Style x:Key="Die_Dot" TargetType="{x:Type Ellipse}">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="7"/>
+            <Setter Property="Height" Value="7"/>
+            <Setter Property="Fill" Value="Black"/>
+        </Style>
+
+        <Style x:Key="Button_Die_1" TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="8" BorderBrush="Black" BorderThickness="2" Background="DarkGray">
+                            <Grid Margin="3" x:Name="DotGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Ellipse Grid.Row="1"
+                                             Grid.Column="1"
+                                             Style="{StaticResource ResourceKey=Die_Dot}"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+
+
+        <Style x:Key="Button_Die_2" TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="8" BorderBrush="Black" BorderThickness="2" Background="DarkGray">
+                            <Grid Margin="3" x:Name="DotGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Ellipse Grid.Row="0"
+                                             Grid.Column="2"
+                                             Style="{StaticResource ResourceKey=Die_Dot}"/>
+                                <Ellipse Grid.Row="2"
+                                             Grid.Column="0"
+                                             Style="{StaticResource ResourceKey=Die_Dot}"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Button_Die_3" TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="8" BorderBrush="Black" BorderThickness="2" Background="DarkGray">
+                            <Grid Margin="3" x:Name="DotGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Ellipse Grid.Row="0"
+                                            Grid.Column="0"
+                                            Style="{StaticResource ResourceKey=Die_Dot}"/>
+                                <Ellipse Grid.Row="1"
+                                             Grid.Column="1"
+                                             Style="{StaticResource ResourceKey=Die_Dot}"/>
+                                <Ellipse Grid.Row="2"
+                                             Grid.Column="2"
+                                             Style="{StaticResource ResourceKey=Die_Dot}"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Button_Die_4" TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="8" BorderBrush="Black" BorderThickness="2" Background="DarkGray">
+                            <Grid Margin="3" x:Name="DotGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Ellipse Grid.Row="0"
+                                            Grid.Column="0"
+                                            Style="{StaticResource ResourceKey=Die_Dot}"/>
+                                <Ellipse Grid.Row="0"
+                                             Grid.Column="2"
+                                             Style="{StaticResource ResourceKey=Die_Dot}"/>
+                                <Ellipse Grid.Row="2"
+                                             Grid.Column="0"
+                                             Style="{StaticResource ResourceKey=Die_Dot}"/>
+                                <Ellipse Grid.Row="2"
+                                             Grid.Column="2"
+                                             Style="{StaticResource ResourceKey=Die_Dot}"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Button_Die_5" TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="8" BorderBrush="Black" BorderThickness="2" Background="DarkGray">
+                            <Grid Margin="3" x:Name="DotGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Ellipse Grid.Row="0"
+                                            Grid.Column="0"
+                                            Style="{StaticResource ResourceKey=Die_Dot}"/>
+                                <Ellipse Grid.Row="0"
+                                             Grid.Column="2"
+                                             Style="{StaticResource ResourceKey=Die_Dot}"/>
+                                <Ellipse Grid.Row="2"
+                                             Grid.Column="0"
+                                             Style="{StaticResource ResourceKey=Die_Dot}"/>
+                                <Ellipse Grid.Row="2"
+                                             Grid.Column="2"
+                                             Style="{StaticResource ResourceKey=Die_Dot}"/>
+                                <Ellipse Grid.Row="1"
+                                             Grid.Column="1"
+                                             Style="{StaticResource ResourceKey=Die_Dot}"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Button_Die_6" TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="8" BorderBrush="Black" BorderThickness="2" Background="DarkGray">
+                            <Grid Margin="3" x:Name="DotGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Ellipse Grid.Row="0"
+                                            Grid.Column="0"
+                                            Style="{StaticResource ResourceKey=Die_Dot}"/>
+                                <Ellipse Grid.Row="0"
+                                             Grid.Column="1"
+                                             Style="{StaticResource ResourceKey=Die_Dot}"/>
+                                <Ellipse Grid.Row="0"
+                                             Grid.Column="2"
+                                             Style="{StaticResource ResourceKey=Die_Dot}"/>
+                                <Ellipse Grid.Row="2"
+                                             Grid.Column="0"
+                                             Style="{StaticResource ResourceKey=Die_Dot}"/>
+                                <Ellipse Grid.Row="2"
+                                             Grid.Column="1"
+                                             Style="{StaticResource ResourceKey=Die_Dot}"/>
+                                <Ellipse Grid.Row="2"
+                                             Grid.Column="2"
+                                             Style="{StaticResource ResourceKey=Die_Dot}"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+
+
+
+
+
+
+    </Application.Resources>
+</Application>

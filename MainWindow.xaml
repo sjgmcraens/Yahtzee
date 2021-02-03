@@ -1,0 +1,301 @@
+﻿<Window x:Class="Yahtzee.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Yahtzee"
+        mc:Ignorable="d"
+        Title="Yatzy" Height="600" Width="1000"
+        Background="Brown"
+        Loaded="Window_Loaded"
+        
+        >
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+
+        </Grid.RowDefinitions>
+
+
+        <Border 
+                Grid.Column="2"
+                Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                BorderThickness="2"
+                BorderBrush="Black">
+            <Canvas x:Name="DieCanvas">
+            </Canvas>
+        </Border>
+
+        <Border BorderThickness="2"
+                BorderBrush="Black"
+                Margin="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="HorizontalAlignment" Value="Left"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="Margin" Value="5"/>
+                    </Style>
+
+                    <Style TargetType="Rectangle" x:Key="BRect">
+                        <Setter Property="Fill">
+                            <Setter.Value>
+                                <SolidColorBrush Color="Black" Opacity=".4" />
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style TargetType="Button" x:Key="ScoreButton">
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <SolidColorBrush Color="Black" Opacity="0" />
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Grid.Resources>
+
+
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="0" Grid.Column="0"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="2" Grid.Column="0"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="4" Grid.Column="0"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="6" Grid.Column="0"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="8" Grid.Column="0"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="10" Grid.Column="0"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="12" Grid.Column="0"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="14" Grid.Column="0"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="16" Grid.Column="0"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="0" Grid.Column="2"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="2" Grid.Column="2"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="4" Grid.Column="2"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="6" Grid.Column="2"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="8" Grid.Column="2"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="10" Grid.Column="2"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="12" Grid.Column="2"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="14" Grid.Column="2"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="16" Grid.Column="2"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="1" Grid.Column="1"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="3" Grid.Column="1"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="5" Grid.Column="1"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="7" Grid.Column="1"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="9" Grid.Column="1"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="11" Grid.Column="1"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="13" Grid.Column="1"/>
+                <Rectangle Style="{DynamicResource BRect}" VerticalAlignment="Stretch"
+                           Grid.Row="15" Grid.Column="1"/>
+
+                <TextBlock Text="Scoreboard"
+                           Grid.Row="0" Grid.Column="0"
+                           FontWeight="Black"/>
+                <TextBlock Text="Player"
+                           Grid.Row="0" Grid.Column="1"
+                           HorizontalAlignment="Center"
+                           FontWeight="Black"/>
+                <TextBlock Text="Bot"
+                           Grid.Row="0" Grid.Column="2"
+                           HorizontalAlignment="Center"
+                           FontWeight="Black"/>
+
+                <TextBlock Text="Ones:"
+                           Grid.Row="1" Grid.Column="0"/>
+                <TextBlock Text="Twos:"
+                           Grid.Row="2" Grid.Column="0"/>
+                <TextBlock Text="Threes:"
+                           Grid.Row="3" Grid.Column="0"/>
+                <TextBlock Text="Fours:"
+                           Grid.Row="4" Grid.Column="0"/>
+                <TextBlock Text="Fives:"
+                           Grid.Row="5" Grid.Column="0"/>
+                <TextBlock Text="Sixes:"
+                           Grid.Row="6" Grid.Column="0"/>
+                <TextBlock Text="Sum:"
+                           Grid.Row="7" Grid.Column="0"/>
+                <TextBlock Text="Bonus:"
+                           Grid.Row="8" Grid.Column="0"/>
+                <TextBlock Text="Three of a kind:"
+                           Grid.Row="9" Grid.Column="0"/>
+                <TextBlock Text="Four of a kind:"
+                           Grid.Row="10" Grid.Column="0"/>
+                <TextBlock Text="Full house:"
+                           Grid.Row="11" Grid.Column="0"/>
+                <TextBlock Text="Small straight:"
+                           Grid.Row="12" Grid.Column="0"/>
+                <TextBlock Text="Large straight:"
+                           Grid.Row="13" Grid.Column="0"/>
+                <TextBlock Text="Chance:"
+                           Grid.Row="14" Grid.Column="0"/>
+                <TextBlock Text="YATHZEE:"
+                           Grid.Row="15" Grid.Column="0"/>
+                <TextBlock Text="Total Score:"
+                           Grid.Row="16" Grid.Column="0"/>
+
+                <Button x:Name="PlayerOnes" Style="{DynamicResource ScoreButton}"
+                        Grid.Column="1" Grid.Row="1"
+                        Click="PlayerScoreClicked"/>
+                <Button x:Name="PlayerTwos" Style="{DynamicResource ScoreButton}"
+                        Grid.Column="1" Grid.Row="2"
+                        Click="PlayerScoreClicked"/>
+                <Button x:Name="PlayerThrees" Style="{DynamicResource ScoreButton}"
+                        Grid.Column="1" Grid.Row="3"
+                        Click="PlayerScoreClicked"/>
+                <Button x:Name="PlayerFours" Style="{DynamicResource ScoreButton}"
+                        Grid.Column="1" Grid.Row="4"
+                        Click="PlayerScoreClicked"/>
+                <Button x:Name="PlayerFives" Style="{DynamicResource ScoreButton}"
+                        Grid.Column="1" Grid.Row="5"
+                        Click="PlayerScoreClicked"/>
+                <Button x:Name="PlayerSixes" Style="{DynamicResource ScoreButton}"
+                        Grid.Column="1" Grid.Row="6"
+                        Click="PlayerScoreClicked"/>
+                <Button x:Name="PlayerSum" Style="{DynamicResource ScoreButton}"
+                        Grid.Column="1" Grid.Row="7"
+                        Click="PlayerScoreClicked"/>
+                <Button x:Name="PlayerBonus" Style="{DynamicResource ScoreButton}"
+                        Grid.Column="1" Grid.Row="8"
+                        Click="PlayerScoreClicked"/>
+                <Button x:Name="PlayerTOAK" Style="{DynamicResource ScoreButton}"
+                        Grid.Column="1" Grid.Row="9"
+                        Click="PlayerScoreClicked"/>
+                <Button x:Name="PlayerFOAK" Style="{DynamicResource ScoreButton}"
+                        Grid.Column="1" Grid.Row="10"
+                        Click="PlayerScoreClicked"/>
+                <Button x:Name="PlayerFH" Style="{DynamicResource ScoreButton}"
+                        Grid.Column="1" Grid.Row="11"
+                        Click="PlayerScoreClicked"/>
+                <Button x:Name="PlayerSS" Style="{DynamicResource ScoreButton}"
+                        Grid.Column="1" Grid.Row="12"
+                        Click="PlayerScoreClicked"/>
+                <Button x:Name="PlayerLS" Style="{DynamicResource ScoreButton}"
+                        Grid.Column="1" Grid.Row="13"
+                        Click="PlayerScoreClicked"/>
+                <Button x:Name="PlayerChance" Style="{DynamicResource ScoreButton}"
+                        Grid.Column="1" Grid.Row="14"
+                        Click="PlayerScoreClicked"/>
+                <Button x:Name="PlayerYathzee" Style="{DynamicResource ScoreButton}"
+                        Grid.Column="1" Grid.Row="15"
+                        Click="PlayerScoreClicked"/>
+                <TextBlock x:Name="PlayerTotalScore"
+                           Grid.Column="1" Grid.Row="16"/>
+
+                <TextBlock x:Name="BotOnes"
+                        Grid.Column="2" Grid.Row="1"/>
+                <TextBlock x:Name="BotTwos"
+                        Grid.Column="2" Grid.Row="2"/>
+                <TextBlock x:Name="BotThrees"
+                        Grid.Column="2" Grid.Row="3"/>
+                <TextBlock x:Name="BotFours"
+                        Grid.Column="2" Grid.Row="4"/>
+                <TextBlock x:Name="BotFives"
+                        Grid.Column="2" Grid.Row="5"/>
+                <TextBlock x:Name="BotSixes"
+                        Grid.Column="2" Grid.Row="6"/>
+                <TextBlock x:Name="BotSum"
+                        Grid.Column="2" Grid.Row="7"/>
+                <TextBlock x:Name="BotBonus"
+                        Grid.Column="2" Grid.Row="8"/>
+                <TextBlock x:Name="BotTOAK"
+                        Grid.Column="2" Grid.Row="9"/>
+                <TextBlock x:Name="BotFOAK"
+                        Grid.Column="2" Grid.Row="10"/>
+                <TextBlock x:Name="BotFH"
+                        Grid.Column="2" Grid.Row="11"/>
+                <TextBlock x:Name="BotSS"
+                        Grid.Column="2" Grid.Row="12"/>
+                <TextBlock x:Name="BotLS"
+                        Grid.Column="2" Grid.Row="13"/>
+                <TextBlock x:Name="BotChance"
+                           Grid.Column="2" Grid.Row="14"/>
+                <TextBlock x:Name="BotYathzee"
+                           Grid.Column="2" Grid.Row="15"/>
+                <TextBlock x:Name="BotTotalScore"
+                           Grid.Column="2" Grid.Row="16"/>
+
+
+
+            </Grid>
+        </Border>
+
+        <Border Grid.Column="1"
+                BorderThickness="0"
+                BorderBrush="Black"
+                Margin="0">
+
+            <StackPanel>
+
+                <StackPanel.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="IndianRed"/>
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="BorderThickness" Value="2"/>
+                        <Setter Property="Padding" Value="10"/>
+                        <Setter Property="Margin" Value="10,0,10,10"/>
+                    </Style>
+                </StackPanel.Resources>
+
+                <Button Content="Reset"
+                        Name="ResetButton"
+                        Click="ResetButton_Click"/>
+                <Button Content="Roll dice"
+                        Name="RollDiceButton"
+                        Click="RollDiceButton_Click"/>
+
+            </StackPanel>
+        </Border>
+
+
+    </Grid>
+</Window>
